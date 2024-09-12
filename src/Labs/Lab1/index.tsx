@@ -178,14 +178,20 @@ export default function Lab1() {
         Loading an image from the internet:
         <br />
         <img
-          id="wd-starship"
+          id="wd-neu"
           width="400px"
           src="https://news.northeastern.edu/wp-content/uploads/2014/01/sustainabiliy_600.jpg"
+          alt="An image of northestern campus"
         />
         <br />
         Loading a local image:
         <br />
-        <img id="wd-teslabot" src="images/boston.jpg" height="200px" />
+        <img
+          id="wd-teslabot"
+          src="images/boston.jpg"
+          height="200px"
+          alt="An image of boston skyline"
+        />
       </div>
     </div>
   );
