@@ -10,9 +10,9 @@ export default function Signup() {
       <br />
       <input placeholder="verify password" type="password" />
       <br />
-      <Link to="/kanbas/account/profile"> Sign up </Link>
+      <Link to="/Kanbas/Account/Profile"> Sign up </Link>
       <br />
-      <Link to="/kanbas/account/signin">Sign in</Link>
+      <Link to="/Kanbas/Account/Signin">Sign in</Link>
     </div>
   );
 }

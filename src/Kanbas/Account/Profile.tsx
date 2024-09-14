@@ -22,7 +22,7 @@ export default function Profile() {
         <option value="STUDENT">Student</option>
       </select>
       <br />
-      <Link to="/kanbas/account/signin">Sign out</Link>
+      <Link to="/Kanbas/Account/Signin">Sign out</Link>
     </div>
   );
 }

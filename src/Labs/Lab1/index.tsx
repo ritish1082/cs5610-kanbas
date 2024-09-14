@@ -306,9 +306,7 @@ export default function Lab1() {
           to get dummy text
           <br />
 
-          
-
-
+      
 
         </form>
       </div>

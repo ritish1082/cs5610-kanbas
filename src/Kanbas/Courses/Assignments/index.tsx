@@ -9,7 +9,7 @@ export default function Assignments() {
       </h3>
       <ul id="wd-assignment-list">
         <li className="wd-assignment-list-item">
-          <a className="wd-assignment-link" href="#/Kanbas/Courses/1234/Assignments/123">
+          <a className="wd-assignment-link" href="/Kanbas/Courses/1234/Assignments/123">
             A1 - ENV + HTML
           </a>
         </li>

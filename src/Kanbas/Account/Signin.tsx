@@ -10,7 +10,7 @@ export default function Signin() {
         Sign in{" "}
       </Link>{" "}
       <br />
-      <Link id="wd-signup-link" to="/kanbas/account/signup">
+      <Link id="wd-signup-link" to="/Kanbas/Account/Signup">
         Sign up
       </Link>
     </div>
