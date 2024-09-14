@@ -2,11 +2,11 @@ import React from "react";
 import Kanbas from "./Kanbas";
 // import "./App.css";
 import Labs from "./Labs";
-import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div>
         <Routes>
           <Route path="/" element={<Navigate to="/Kanbas" />} />
@@ -14,7 +14,7 @@ function App() {
           <Route path="/Kanbas/*" element={<Kanbas />} />
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
