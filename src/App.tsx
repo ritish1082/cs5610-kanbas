@@ -1,14 +1,12 @@
-import React from "react";
-import "./App.css";
 import Labs from "./Labs";
-
-function App() {
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+export default function App() {
   return (
-    <div>
-      <h1>Welcome to Web Dev</h1>
-      <Labs />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="labs" />} />
+        <Route path="/labs/*" element={<Labs />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
