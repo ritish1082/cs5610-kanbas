@@ -5,7 +5,7 @@ import TOC from "./TOC";
 
 export default function Labs() {
   return (
-    <div>
+    <div >
       <h1>Sai Ritish Reddy Musku</h1>
       <p>Section 3</p>
       <p>CRN: 20596</p>
