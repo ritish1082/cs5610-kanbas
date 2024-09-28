@@ -8,10 +8,10 @@ import Positions from "./Positions";
 import ReactIconsSampler from "./ReactIcons";
 import ScreenSizeLabel from "./ScreenSizeLabel";
 import Zindex from "./Zindex";
-import  BootstrapTables from "./BootstrapTables"
+import BootstrapTables from "./BootstrapTables";
 import BootstrapLists from "./BootstrapLists";
 import BootstrapForms from "./BootstrapForms";
-
+import BootstrapNavigation from "./BootstrapNavigation";
 
 export default function Lab2() {
   return (
@@ -124,18 +124,32 @@ border-blue border-solid padding-fat"
       >
         Rounded corners on the top
       </p>
-      <Dimensions /><br />
-      <Positions /><br />
-      <Zindex /><br />
-      <Float /><br />
-      <GridLayout /><br />
-      <Flex /><br />
-      <ReactIconsSampler /><br />
-      <BootstrapGrids /><br />
-      <ScreenSizeLabel/><br />
-      <BootstrapTables /><br />
-      <BootstrapLists/><br />
-      <BootstrapForms/><br />
+      <Dimensions />
+      <br />
+      <Positions />
+      <br />
+      <Zindex />
+      <br />
+      <Float />
+      <br />
+      <GridLayout />
+      <br />
+      <Flex />
+      <br />
+      <ReactIconsSampler />
+      <br />
+      <BootstrapGrids />
+      <br />
+      <ScreenSizeLabel />
+      <br />
+      <BootstrapTables />
+      <br />
+      <BootstrapLists />
+      <br />
+      <BootstrapForms />
+      <br />
+      <BootstrapNavigation />
+      <br />
     </div>
   );
 }
