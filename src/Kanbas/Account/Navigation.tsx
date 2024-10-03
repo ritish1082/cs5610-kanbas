@@ -24,7 +24,7 @@ export default function AccountNavigation() {
             : "list-group-item border text-danger border-0"
         }
       >
-        Signout
+        Signup
       </NavLink>
 
       <NavLink
