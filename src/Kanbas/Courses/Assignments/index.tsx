@@ -1,8 +1,8 @@
 import { BsGripVertical } from "react-icons/bs";
-import LessonControlButtons from "../Modules/LessonControlButtons";
 import AssignmentsControls from "./AssignmentsControls";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import AssignmentControlButtons from "./AssignmentControlButtons";
+import ControlButtons from "./ControlButtons";
 
 export default function Assignments() {
   return (
@@ -17,8 +17,8 @@ export default function Assignments() {
           <div className="dropdown-toggle wd-title p-3 ps-2 bg-secondary ">
             {" "}
             <BsGripVertical className="me-2 fs-3 " />
-            <AssignmentControlButtons />
             Assignments
+            <ControlButtons />
           </div>
           <ul className="wd-lessons list-group rounded-0">
             <li className="wd-lesson list-group-item p-3 ps-1">
@@ -50,7 +50,7 @@ export default function Assignments() {
                   </div>
                 </div>
                 <div className="col-md-2 text-end">
-                  <LessonControlButtons />
+                  <AssignmentControlButtons />
                 </div>
               </div>
             </li>
@@ -84,7 +84,7 @@ export default function Assignments() {
                   </div>
                 </div>
                 <div className="col-md-2 text-end">
-                  <LessonControlButtons />
+                  <AssignmentControlButtons />
                 </div>
               </div>
             </li>
@@ -118,7 +118,7 @@ export default function Assignments() {
                   </div>
                 </div>
                 <div className="col-md-2 text-end">
-                  <LessonControlButtons />
+                  <AssignmentControlButtons />
                 </div>
               </div>
             </li>
@@ -152,7 +152,7 @@ export default function Assignments() {
                   </div>
                 </div>
                 <div className="col-md-2 text-end">
-                  <LessonControlButtons />
+                  <AssignmentControlButtons />
                 </div>
               </div>
             </li>
@@ -186,7 +186,7 @@ export default function Assignments() {
                   </div>
                 </div>
                 <div className="col-md-2 text-end">
-                  <LessonControlButtons />
+                  <AssignmentControlButtons />
                 </div>
               </div>
             </li>
