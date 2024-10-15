@@ -16,6 +16,7 @@ export default function Lab1() {
         h5, and h6. Tag h1 is the largest heading and h6 is the smallest heading.
       </div>
       {/* Paragraph  */}
+
       <div id="wd-p-tag">
         <h4>Paragraph Tag</h4>
         <p id="wd-p-1">
@@ -24,6 +25,13 @@ export default function Lab1() {
           text as one single set of sentences. To force the browser to add vertical spacing, wrap
           the paragraphs you want to separate with the paragraph tag
         </p>
+
+      </div>
+      {/* Ordered List */}
+      <div id="wd-p-tag">
+        <h4>Paragraph Tag</h4>
+        <p id="wd-p-1"> ... </p>
+
         <p id="wd-p-2">
           This is the first paragraph. The paragraph tag is used to format vertical gaps between
           long pieces of text like this one.
@@ -53,6 +61,7 @@ export default function Lab1() {
           <li>Flip and cook the other side.</li>
           <li>Serve and enjoy!</li>
         </ol>
+
         <p>My favorite recipe: Chicken Biryani</p>
         <ol id="wd-your-favorite-recipe">
           <li>Marinate the chicken with spices for atleast 1 hour.</li>
@@ -104,12 +113,14 @@ export default function Lab1() {
               <td>Q1</td>
               <td>HTML</td>
               <td>2/3/24</td>
+
               <td>85</td>
             </tr>
             <tr>
               <td>Q2</td>
               <td>CSS</td>
               <td>2/10/24</td>
+
               <td>90</td>
             </tr>
             <tr>
@@ -128,6 +139,7 @@ export default function Lab1() {
               <td>Q5</td>
               <td>React</td>
               <td>3/05/24</td>
+
               <td>95</td>
             </tr>
             <tr>
@@ -165,6 +177,7 @@ export default function Lab1() {
             <tr>
               <td colSpan={3}>Average</td>
               <td>91</td>
+
             </tr>
           </tfoot>
         </table>
@@ -306,6 +319,7 @@ export default function Lab1() {
           to get dummy text
           <br />
         </form>
+
       </div>
     </div>
   );

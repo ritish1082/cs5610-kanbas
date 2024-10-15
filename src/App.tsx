@@ -5,6 +5,7 @@ import {HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+
 function App() {
   return (
     <HashRouter>
