@@ -1,10 +1,16 @@
+import { useParams, Link } from "react-router-dom";
+import { assignments } from "../../Database";
+
 export default function AssignmentEditor() {
+  const { cid,aid } = useParams();
+  const assignment = assignments.find((assignment) => assignment._id === aid);
+
   return (
     <div id="wd-assignments-editor" className="container mt-5">
       <label htmlFor="wd-name">
         <h3>Assignment Name</h3>
       </label>
-      <input id="wd-name" className="form-control mb-4" defaultValue="A1 - ENV + HTML" />
+      <input id="wd-name" className="form-control mb-4" value={assignment?.title} />
       <label htmlFor="wd-description">
         <h4>Description</h4>
       </label>
@@ -154,12 +160,16 @@ The Kanbas application should include a link to navigate back to the landing pag
       <hr />
 
       <div className="d-flex justify-content-end">
-        <button type="button" className="btn btn-secondary me-2">
-          Cancel
-        </button>
-        <button type="submit" className="btn btn-danger">
-          Save
-        </button>
+        <Link to={`/Kanbas/Courses/${cid}/Assignments`}>
+          <button type="button" className="btn btn-secondary me-2">
+            Cancel
+          </button>
+        </Link>
+        <Link to={`/Kanbas/Courses/${cid}/Assignments`}>
+          <button type="submit" className="btn btn-danger">
+            Save
+          </button>
+        </Link>
       </div>
     </div>
   );
