@@ -11,7 +11,7 @@ export default function Labs() {
       <p>Section 3</p>
       <p>CRN: 20596</p>
       <p id="wd-github">
-        Github code for CS 5610 <a href="https://github.com/ritish1082/cs5610-kanbas"></a>
+        Github code for CS 5610 <a href="https://github.com/ritish1082/cs5610-kanbas"> here</a>
       </p>
       <h2>Labs</h2>
       <TOC />

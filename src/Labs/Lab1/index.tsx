@@ -16,7 +16,6 @@ export default function Lab1() {
         h5, and h6. Tag h1 is the largest heading and h6 is the smallest heading.
       </div>
       {/* Paragraph  */}
-
       <div id="wd-p-tag">
         <h4>Paragraph Tag</h4>
         <p id="wd-p-1">
@@ -25,13 +24,6 @@ export default function Lab1() {
           text as one single set of sentences. To force the browser to add vertical spacing, wrap
           the paragraphs you want to separate with the paragraph tag
         </p>
-
-      </div>
-      {/* Ordered List */}
-      <div id="wd-p-tag">
-        <h4>Paragraph Tag</h4>
-        <p id="wd-p-1"> ... </p>
-
         <p id="wd-p-2">
           This is the first paragraph. The paragraph tag is used to format vertical gaps between
           long pieces of text like this one.
@@ -61,7 +53,6 @@ export default function Lab1() {
           <li>Flip and cook the other side.</li>
           <li>Serve and enjoy!</li>
         </ol>
-
         <p>My favorite recipe: Chicken Biryani</p>
         <ol id="wd-your-favorite-recipe">
           <li>Marinate the chicken with spices for atleast 1 hour.</li>
@@ -113,14 +104,12 @@ export default function Lab1() {
               <td>Q1</td>
               <td>HTML</td>
               <td>2/3/24</td>
-
               <td>85</td>
             </tr>
             <tr>
               <td>Q2</td>
               <td>CSS</td>
               <td>2/10/24</td>
-
               <td>90</td>
             </tr>
             <tr>
@@ -139,7 +128,6 @@ export default function Lab1() {
               <td>Q5</td>
               <td>React</td>
               <td>3/05/24</td>
-
               <td>95</td>
             </tr>
             <tr>
@@ -177,7 +165,6 @@ export default function Lab1() {
             <tr>
               <td colSpan={3}>Average</td>
               <td>91</td>
-
             </tr>
           </tfoot>
         </table>
@@ -221,7 +208,6 @@ export default function Lab1() {
             value="Wonderland"
             title="The last name"
           />
-          
           <h5>Text boxes</h5>
           <label>Biography:</label>
           <br />
@@ -233,14 +219,12 @@ export default function Lab1() {
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </textarea>
-          
           <h5 id="wd-buttons">Buttons</h5>
           <button id="wd-all-good" onClick={() => alert("Life is Good!")} type="button">
             Hello World!
           </button>
           <h5>File upload</h5>
           <input id="wd-upload" type="file" />
-          
           <h5 id="wd-radio-buttons">Radio buttons</h5>
           <label>Favorite movie genre:</label>
           <br />
@@ -270,7 +254,6 @@ export default function Lab1() {
           <input type="checkbox" name="check-genre" id="wd-chkbox-fantasy" />
           <label htmlFor="wd-chkbox-fantasy">Fantasy</label>
           <h4 id="wd-dropdowns">Dropdowns</h4>
-          
           <h5>Select one</h5>
           <label htmlFor="wd-select-one-genre"> Favorite movie genre: </label>
           <br />
@@ -282,7 +265,6 @@ export default function Lab1() {
             </option>
             <option value="FANTASY">Fantasy</option>
           </select>
-          
           <h5>Select many</h5>
           <label htmlFor="wd-select-many-genre"> Favorite movie genres: </label>
           <br />
@@ -296,7 +278,6 @@ export default function Lab1() {
             </option>
             <option value="FANTASY">Fantasy</option>
           </select>
-          
           <h4>Other HTML field types</h4>
           <label htmlFor="wd-text-fields-email"> Email: </label>
           <input type="email" placeholder="jdoe@somewhere.com" id="wd-text-fields-email" />
@@ -310,7 +291,6 @@ export default function Lab1() {
           <label htmlFor="wd-text-fields-dob"> Date of birth: </label>
           <input type="date" id="wd-text-fields-dob" value="2000-01-21" />
           <br />
-
           <h4>Anchor tag</h4>
           Please
           <a id="wd-lipsum" href="https://www.lipsum.com">
@@ -319,7 +299,6 @@ export default function Lab1() {
           to get dummy text
           <br />
         </form>
-
       </div>
     </div>
   );
