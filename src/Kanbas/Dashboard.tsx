@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import * as db from "./Database";
-import { useState } from "react";
-
 import { useSelector } from "react-redux";
 
 export default function Dashboard({

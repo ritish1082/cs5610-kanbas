@@ -1,6 +1,6 @@
 import { FaPlus, FaSearch } from "react-icons/fa"; // Importing the plus and search icons
 
-export default function ModulesControls() {
+export default function AssignmentsControls() {
   return (
     <div id="wd-modules-controls" className="text-nowrap">
       <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-2 float-end">
