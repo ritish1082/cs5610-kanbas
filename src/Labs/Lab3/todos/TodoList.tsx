@@ -1,5 +1,3 @@
-import TodoItem from "./TodoItem";
-import todos from "./todos.json";
 import { useSelector } from "react-redux";
 
 const TodoList = () => {
