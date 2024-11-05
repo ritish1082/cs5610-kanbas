@@ -7,8 +7,14 @@ import "./Styles.css";
 import * as db from "./Database";
 import { useState } from "react";
 import ProtectedRoute from "./Account/ProtectedRoute";
+import { enrollCourse } from "./EnrollmentReducer";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Kanbas() {
+  const dispatch = useDispatch();
+
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+
   const [courses, setCourses] = useState<any[]>(db.courses);
   const [course, setCourse] = useState<any>({
     _id: "0",
@@ -21,8 +27,18 @@ export default function Kanbas() {
   });
 
   const addNewCourse = () => {
-    const newCourse = { ...course, _id: new Date().getTime().toString() };
-    setCourses([...courses, { ...course, ...newCourse }]);
+    const newCourseId = new Date().getTime().toString();
+    const newCourse = { ...course, _id: newCourseId };
+
+    setCourses((prevCourses) => [...prevCourses, newCourse]);
+
+    dispatch(
+      enrollCourse({
+        _id: newCourseId, // Use the same ID for both the course and the enrollment
+        course: newCourseId, // Use the same course ID for the enrollment
+        user: currentUser?._id, // Add the current user's ID to the enrollment
+      })
+    );
   };
 
   const updateCourse = () => {

@@ -2,10 +2,9 @@ import { BsGripVertical } from "react-icons/bs";
 import AssignmentsControls from "./AssignmentsControls";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import AssignmentControlButtons from "./AssignmentControlButtons";
-import * as db from "../../Database";
 import ControlButtons from "./ControlButtons";
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {useSelector } from "react-redux";
 
 
 export default function Assignments() {
@@ -15,7 +14,6 @@ export default function Assignments() {
   const { assignments } = useSelector((state: any) => state.assignmentReducer);
 
 
-  const dispatch = useDispatch();
 
   return (
     <div>
