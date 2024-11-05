@@ -7,36 +7,20 @@ import { useParams } from "react-router";
 
 import { addModule, editModule, updateModule, deleteModule } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
-import * as db from "../../Database";
 
 export default function Modules() {
   const { cid } = useParams();
-  // const [modules, setModules] = useState<any[]>(db.modules);
   const [moduleName, setModuleName] = useState("");
   const { modules } = useSelector((state: any) => state.modulesReducer);
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
   const dispatch = useDispatch();
 
-  // const addModule = () => {
-  //   setModules([
-  //     ...modules,
-  //     { _id: new Date().getTime().toString(), name: moduleName, course: cid, lessons: [] },
-  //   ]);
-  //   setModuleName("");
-  // };
-
-  // const deleteModule = (moduleId: string) => {
-  //   setModules(modules.filter((m) => m._id !== moduleId));
-  // };
-
-  // const editModule = (moduleId: string) => {
-  //   setModules(modules.map((m) => (m._id === moduleId ? { ...m, editing: true } : m)));
-  // };
-  // const updateModule = (module: any) => {
-  //   setModules(modules.map((m) => (m._id === module._id ? module : m)));
-  // };
+  const disabled = currentUser.role !== "FACULTY";
 
   return (
     <div>
+      {/* What should be disabled ?? */}
+
       <ModulesControls
         setModuleName={setModuleName}
         moduleName={moduleName}
@@ -45,6 +29,7 @@ export default function Modules() {
           setModuleName("");
         }}
       />
+
       <br />
       <br />
       <br />
@@ -82,7 +67,7 @@ export default function Modules() {
                 <ul className="wd-lessons list-group rounded-0">
                   {module.lessons.map((lesson: any) => (
                     <li className="wd-lesson list-group-item p-3 ps-1">
-                      <BsGripVertical className="me-2 fs-3" /> {lesson.name}{" "}
+                      <BsGripVertical className="me-2 fs-3" /> {lesson.name}
                       <LessonControlButtons />
                     </li>
                   ))}

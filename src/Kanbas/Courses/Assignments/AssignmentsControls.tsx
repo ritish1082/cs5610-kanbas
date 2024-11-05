@@ -1,12 +1,15 @@
 import { FaPlus, FaSearch } from "react-icons/fa"; // Importing the plus and search icons
+import { Link } from "react-router-dom";
 
 export default function AssignmentsControls() {
   return (
     <div id="wd-modules-controls" className="text-nowrap">
-      <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-2 float-end">
-        <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
-        Assignment
-      </button>
+      <Link to="newAssignment">
+        <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-2 float-end">
+          <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
+          Assignment
+        </button>
+      </Link>
 
       <button id="wd-view-progress" className="btn btn-lg btn-secondary me-2 float-end">
         <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />

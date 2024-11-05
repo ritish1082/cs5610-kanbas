@@ -5,11 +5,18 @@ import AssignmentControlButtons from "./AssignmentControlButtons";
 import * as db from "../../Database";
 import ControlButtons from "./ControlButtons";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 
 export default function Assignments() {
   const { cid } = useParams();
-  const assignments = db.assignments;
+  // const assignments = db.assignments;
+  // const [moduleName, setModuleName] = useState("");
+  const { assignments } = useSelector((state: any) => state.assignmentReducer);
+
+
+  const dispatch = useDispatch();
+
   return (
     <div>
       <AssignmentsControls />
