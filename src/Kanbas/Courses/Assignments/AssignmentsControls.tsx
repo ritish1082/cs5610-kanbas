@@ -7,13 +7,11 @@ export default function AssignmentsControls() {
 
   const isFaculty = currentUser.role === "FACULTY";
 
-  console.log("dfhgjhkl;",isFaculty)
-
   return (
     <div id="wd-modules-controls" className="text-nowrap">
       {isFaculty && (
         <>
-          <Link to="newAssignment">
+          <Link to={`${new Date().getTime().toString()}`}>
             <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-2 float-end">
               <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
               Assignment

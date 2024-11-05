@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addAssignment } from "./reducer";
+import { addAssignment, updateAssignment } from "./reducer";
 import { useNavigate } from "react-router-dom";
 
 export default function AssignmentEditor() {
@@ -12,24 +12,22 @@ export default function AssignmentEditor() {
   const { cid, aid } = useParams();
   const { assignments } = useSelector((state: any) => state.assignmentReducer);
 
-  console.log(assignments);
-
   const assignment = assignments.find((assignment: any) => assignment._id === aid);
-
-  console.log(currentUser);
 
   const disabled = currentUser.role !== "FACULTY";
 
+  // Store the data in the form
   const [formData, setFormData] = useState({
-    name: assignment?.title,
+    name: assignment?.title || "Assignment Name",
     course: cid,
-    description: assignment?.description,
+    description: assignment?.description || "Assignment description",
     points: assignment?.points,
     dueDate: assignment?.dueDate,
     availableFrom: assignment?.availableFrom,
     availableUntil: assignment?.availableUntil,
   });
 
+  // Handling any changes in the form
   const handleChange = (e: any) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({
@@ -38,22 +36,40 @@ export default function AssignmentEditor() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log("In editor data", formData);
+  // Handling submit
+  const existingAssignment = assignments.find((assignment: any) => assignment._id === aid);
 
-    dispatch(
-      addAssignment({
-        title: formData.name,
-        description: formData.description,
-        point: formData.points,
-        dueDate: formData.dueDate,
-        availableFrom: formData.availableFrom,
-        availableUntil: formData.availableUntil,
-        course: formData.course,
-      })
-    );
-
+  // Function to handle add or update assignment
+  const handleSubmit = () => {
+    if (existingAssignment) {
+      // Dispatch update assignment if it exists
+      dispatch(
+        updateAssignment({
+          _id: aid,
+          title: formData.name,
+          description: formData.description,
+          points: formData.points,
+          dueDate: formData.dueDate,
+          availableFrom: formData.availableFrom,
+          availableUntil: formData.availableUntil,
+          course: formData.course,
+        })
+      );
+    } else {
+      // Dispatch add assignment if it doesn't exist
+      dispatch(
+        addAssignment({
+          _id: aid,
+          title: formData.name,
+          description: formData.description,
+          points: formData.points,
+          dueDate: formData.dueDate,
+          availableFrom: formData.availableFrom,
+          availableUntil: formData.availableUntil,
+          course: formData.course,
+        })
+      );
+    }
     navigate(`/Kanbas/Courses/${cid}/Assignments`);
   };
 
@@ -108,13 +124,123 @@ The Kanbas application should include a link to navigate back to the landing pag
             />
           </div>
         </div>
+
         <div className="row mb-4">
           <div className="col-lg-4 text-lg-end">
-            <label htmlFor="dueDate" className="form-label">
-              Due Date
+            <label htmlFor="wd-groups" className="form-label">
+              Assignment Group
             </label>
           </div>
           <div className="col-lg-8">
+            <select id="wd-groups" disabled={disabled} className="form-select mb-3">
+              <option value="1">ASSIGNMENTS</option>
+              <option value="2">LABS</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="row mb-4">
+          <div className="col-lg-4 text-lg-end">
+            <label htmlFor="wd-display-grade-as" className="form-label">
+              Display Grade as
+            </label>
+          </div>
+          <div className="col-lg-8">
+            <select id="wd-display-grade-as" disabled={disabled} className="form-select mb-3">
+              <option value="1">PERCENTAGES</option>
+              <option value="2">MARKS</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="row mb-4">
+          <div className="col-lg-4 text-lg-end">
+            <label htmlFor="wd-submission-type" className="form-label">
+              Submission Type
+            </label>
+          </div>
+          <div className="col-lg-8 border border-1 p-2 rounded">
+            <select id="wd-submission-type" disabled={disabled} className="form-select mb-4">
+              <option value="1">ONLINE</option>
+              <option value="2">OFFLINE</option>
+            </select>
+            <p>
+              <b>Online Entry Options</b>
+            </p>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                id="wd-text-entry"
+                disabled={disabled}
+                className="form-check-input"
+              />
+              <label htmlFor="wd-text-entry" className="form-check-label">
+                Text entry
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                id="wd-website-url"
+                disabled={disabled}
+                className="form-check-input"
+              />
+              <label htmlFor="wd-website-url" className="form-check-label">
+                Website URL
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                id="wd-media-recordings"
+                disabled={disabled}
+                className="form-check-input"
+              />
+              <label htmlFor="wd-media-recordings" className="form-check-label">
+                Media Recordings
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                id="wd-student-annotation"
+                disabled={disabled}
+                className="form-check-input"
+              />
+              <label htmlFor="wd-student-annotation" className="form-check-label">
+                Student Annotations
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                id="wd-file-upload"
+                disabled={disabled}
+                className="form-check-input"
+              />
+              <label htmlFor="wd-file-upload" className="form-check-label">
+                File Upload
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div className="row mb-4">
+          <div className="col-lg-4 text-lg-end">Assign</div>
+          <div className="col-lg-8 border border-2 p-2 rounded">
+            <label htmlFor="wd-assign-to" className="form-label">
+              Assign to
+            </label>
+            <input
+              type="text"
+              id="wd-assign-to"
+              className="form-control mb-4"
+              value="Everyone"
+              disabled={disabled}
+            />
+            <label htmlFor="wd-due-date" className="form-label">
+              Due Date
+            </label>
             <input
               type="date"
               id="dueDate"
@@ -123,15 +249,9 @@ The Kanbas application should include a link to navigate back to the landing pag
               onChange={handleChange}
               disabled={disabled}
             />
-          </div>
-        </div>
-        <div className="row mb-4">
-          <div className="col-lg-4 text-lg-end">
-            <label htmlFor="availableFrom" className="form-label">
-              Available From
+            <label htmlFor="wd-available-from" className="form-label">
+              Available from
             </label>
-          </div>
-          <div className="col-lg-8">
             <input
               type="date"
               id="availableFrom"
@@ -140,15 +260,9 @@ The Kanbas application should include a link to navigate back to the landing pag
               onChange={handleChange}
               disabled={disabled}
             />
-          </div>
-        </div>
-        <div className="row mb-4">
-          <div className="col-lg-4 text-lg-end">
-            <label htmlFor="availableUntil" className="form-label">
-              Available Until
+            <label htmlFor="wd-available-until" className="form-label">
+              Available until
             </label>
-          </div>
-          <div className="col-lg-8">
             <input
               type="date"
               id="availableUntil"
@@ -168,7 +282,7 @@ The Kanbas application should include a link to navigate back to the landing pag
                 Cancel
               </button>
             </Link>
-            <button type="submit" className="btn btn-warning" disabled={disabled}>
+            <button type="submit" className="btn btn-danger" disabled={disabled}>
               Submit
             </button>
           </div>
