@@ -7,6 +7,7 @@ import "./Styles.css";
 import * as db from "./Database";
 import { useState } from "react";
 import ProtectedRoute from "./Account/ProtectedRoute";
+import CourseProtectedRoute from "./Courses/ProtectedRoute"
 import { enrollCourse } from "./EnrollmentReducer";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -82,9 +83,9 @@ export default function Kanbas() {
           <Route
             path="Courses/:cid/*"
             element={
-              <ProtectedRoute>
+              <CourseProtectedRoute>
                 <Courses courses={courses} />
-              </ProtectedRoute>
+              </CourseProtectedRoute>
             }
           />
         </Routes>
