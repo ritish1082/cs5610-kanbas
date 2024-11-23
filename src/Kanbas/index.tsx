@@ -4,7 +4,7 @@ import Account from "./Account";
 import Courses from "./Courses";
 import Dashboard from "./Dashboard";
 import KanbasNavigation from "./Navigation";
-
+import "./styles.css";
 // import * as db from "./Database";
 import * as courseClient from "./Courses/client";
 import * as userClient from "./Account/client";
@@ -23,7 +23,6 @@ export default function Kanbas() {
     try {
       const courses = await userClient.findMyCourses();
       setCourses(courses);
-      console.log("Setting courses index", courses);
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +42,7 @@ export default function Kanbas() {
   });
   const addNewCourse = async () => {
     const newCourse = await userClient.createCourse(course);
-    setCourses([...courses, newCourse]);
+    setCourses([ ...courses, newCourse ]);
   };
 
   const updateCourse = async () => {
@@ -67,38 +66,38 @@ export default function Kanbas() {
 
   return (
     <Session>
-      <div id="wd-kanbas">
-        <KanbasNavigation />
-        <div className="wd-main-content-offset p-3">
-          <Routes>
-            <Route path="/" element={<Navigate to="Account" />} />
-            <Route path="/Account/*" element={<Account />} />
-            <Route
-              path="Dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard
-                    courses={courses}
-                    course={course}
-                    setCourse={setCourse}
-                    addNewCourse={addNewCourse}
-                    deleteCourse={deleteCourse}
-                    updateCourse={updateCourse}
-                  />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="Courses/:cid/*"
-              element={
-                <CourseProtectedRoute>
-                  <Courses courses={courses} />
-                </CourseProtectedRoute>
-              }
-            />
-          </Routes>
-        </div>
+    <div id="wd-kanbas">
+      <KanbasNavigation />
+      <div className="wd-main-content-offset p-3">
+        <Routes>
+          <Route path="/" element={<Navigate to="Account" />} />
+          <Route path="/Account/*" element={<Account />} />
+          <Route
+            path="Dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard
+                  courses={courses}
+                  course={course}
+                  setCourse={setCourse}
+                  addNewCourse={addNewCourse}
+                  deleteCourse={deleteCourse}
+                  updateCourse={updateCourse}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="Courses/:cid/*"
+            element={
+              <CourseProtectedRoute>
+                <Courses courses={courses} />
+              </CourseProtectedRoute>
+            }
+          />
+        </Routes>
       </div>
+    </div>
     </Session>
   );
 }
