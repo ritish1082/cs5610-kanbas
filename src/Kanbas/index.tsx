@@ -114,6 +114,7 @@ export default function Kanbas() {
                 </CourseProtectedRoute>
               }
             />
+            
           </Routes>
         </div>
       </div>
