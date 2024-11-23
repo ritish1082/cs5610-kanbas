@@ -1,5 +1,4 @@
 import ModulesControls from "./ModulesControls";
-import "../../styles.css";
 import LessonControlButtons from "./LessonControlButtons";
 import { BsGripVertical } from "react-icons/bs";
 import { GrLink } from "react-icons/gr";
