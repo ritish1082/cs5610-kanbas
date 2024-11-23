@@ -11,11 +11,10 @@ import * as userClient from "./Account/client";
 import { useState } from "react";
 import ProtectedRoute from "./Account/ProtectedRoute";
 import CourseProtectedRoute from "./Courses/ProtectedRoute";
-import { enrollCourse } from "./EnrollmentReducer";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Session from "./Account/Session";
 export default function Kanbas() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const [courses, setCourses] = useState<any[]>(db.courses);
   const [courses, setCourses] = useState<any[]>([]);
   const { currentUser } = useSelector((state: any) => state.accountReducer);

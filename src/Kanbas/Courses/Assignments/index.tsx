@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect } from "react";
 import { BsGripVertical } from "react-icons/bs";
-import { MdOutlineAssignment } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
 import AssignmentControlButtons from "./LessonControlButtons";
 import { HiOutlinePencilAlt } from "react-icons/hi";
-import DescControlButtons from "./LessonControlButtons";
 import AssignmentControls from "./AssignmentsControls";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAssignment, deleteAssignment, setAssignments } from "./reducer";
 import * as assignmentClient from "./client";
-import GreenCheckmark from "./GreenCheckmark";
 export default function Assignments() {
   const { cid } = useParams();
 
