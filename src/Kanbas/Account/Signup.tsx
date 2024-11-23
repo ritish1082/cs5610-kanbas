@@ -4,7 +4,9 @@ import * as client from "./client";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./reducer";
 export default function Signup() {
-  const [user, setUser] = useState<any>({});
+  const [user, setUser] = useState<any>({
+    role: "STUDENT",
+  });
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const signup = async () => {
@@ -14,7 +16,7 @@ export default function Signup() {
   };
   return (
     <div className="wd-signup-screen">
-      <h1>Sign up</h1>
+      <h3>Sign up</h3>
       <input
         value={user.username}
         onChange={(e) => setUser({ ...user, username: e.target.value })}

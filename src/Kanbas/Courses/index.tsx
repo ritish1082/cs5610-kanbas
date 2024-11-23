@@ -1,10 +1,10 @@
 import CoursesNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
+import { courses } from "../Database";
+import { Navigate, Route, Routes, useLocation, useParams } from "react-router";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
-
-import { Navigate, Route, Routes, useParams, useLocation } from "react-router";
 import { FaAlignJustify } from "react-icons/fa";
 import PeopleTable from "./People/Table";
 
@@ -21,20 +21,17 @@ export default function Courses({ courses }: { courses: any[] }) {
       </h2>
       <hr />
       <div className="d-flex">
-        <div className="d-none d-md-block">
-          <CoursesNavigation />
-        </div>
+        <div className="d-none d-md-block"></div>
+
+        <CoursesNavigation />
         <div className="flex-fill">
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />
             <Route path="Modules" element={<Modules />} />
-            <Route path="Piazza" element={<h3>PIAZZA</h3>} />
-            <Route path="Zoom" element={<h3>ZOOM</h3>} />
             <Route path="Assignments" element={<Assignments />} />
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
-            <Route path="Quizzes" element={<h3>Quizes</h3>} />
-            <Route path="Grades" element={<h3>Grades</h3>} />
+            <Route path="Assignments/newAssignment" element={<AssignmentEditor />} />
             <Route path="People" element={<PeopleTable />} />
           </Routes>
         </div>

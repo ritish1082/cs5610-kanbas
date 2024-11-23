@@ -54,6 +54,8 @@ export default function Dashboard({
   };
 
   useEffect(() => {
+    console.log("Fetch courses", coursesMap);
+
     if (isStudent) {
       if (displayCourses) {
         setCoursesMap(allCourses);

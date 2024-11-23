@@ -23,13 +23,13 @@ export default function Kanbas() {
     try {
       const courses = await userClient.findMyCourses();
       setCourses(courses);
+      console.log("Setting courses index", courses);
     } catch (error) {
       console.error(error);
     }
   };
   useEffect(() => {
     fetchCourses();
-    
   }, [currentUser]);
 
   const [course, setCourse] = useState<any>({
