@@ -29,6 +29,7 @@ export default function Kanbas() {
   };
   useEffect(() => {
     fetchCourses();
+    
   }, [currentUser]);
 
   const [course, setCourse] = useState<any>({
