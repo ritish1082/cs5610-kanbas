@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 export default function ArrayStateVariable() {
   const [array, setArray] = useState([1, 2, 3, 4, 5]);
   const addElement = () => {
-    setArray([...array, Math.floor(Math.random() * 100)]);
+    setArray([Math.floor(Math.random() * 100), ...array]);
   };
   const deleteElement = (index: number) => {
     setArray(array.filter((item, i) => i !== index));
@@ -15,9 +15,7 @@ export default function ArrayStateVariable() {
         {array.map((item, index) => (
           <li key={index}>
             {item}
-            <button onClick={() => deleteElement(index)} id="wd-delete-element-click">
-              Delete
-            </button>
+            <button onClick={() => deleteElement(index)}>Delete</button>{" "}
           </li>
         ))}
       </ul>

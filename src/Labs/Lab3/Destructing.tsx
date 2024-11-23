@@ -2,7 +2,7 @@ export default function Destructing() {
   const person = { name: "John", age: 25 };
   const { name, age } = person;
   // const name = person.name
-  // const age = person.age
+  // const age  = person.age
   const numbers = ["one", "two", "three"];
   const [first, second, third] = numbers;
   return (
@@ -13,15 +13,13 @@ export default function Destructing() {
       <br />
       <br />
       name = {name}
-      <br />
-      age = {age}
+      <br /> age = {age}
       <h3>Array Destructing</h3>
       const [first, second, third] = ["one","two","three"]
       <br />
       <br />
       first = {first}
-      <br />
-      second = {second}
+      <br /> second = {second}
       <br />
       third = {third}
       <hr />

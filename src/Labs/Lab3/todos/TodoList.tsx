@@ -1,17 +1,13 @@
-import { useSelector } from "react-redux";
-
+import TodoItem from "./TodoItem";
+import todos from "./todos.json";
 const TodoList = () => {
-  const { todos } = useSelector((state: any) => state.todosReducer);
-
   return (
     <>
       <h3>Todo List</h3>
       <ul className="list-group">
-        {todos.map((todo: any) => (
-          <li className="list-group-item" key={todo.id}>
-            {todo.title}
-          </li>
-        ))}
+        {todos.map((todo) => {
+          return <TodoItem todo={todo} />;
+        })}
       </ul>
       <hr />
     </>

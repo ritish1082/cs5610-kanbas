@@ -62,9 +62,10 @@ export default function Lab3() {
       Square of 8 = <Square>8</Square>
       <hr />
       <Highlight>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus
-        cum, saepe totam vel nihil repellat nemo explicabo excepturi consectetur. Modi omnis minus
-        sequi maiores, provident voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione
+        eaque illo minus cum, saepe totam vel nihil repellat nemo explicabo
+        excepturi consectetur. Modi omnis minus sequi maiores, provident
+        voluptates.
       </Highlight>
       <PathParameters />
     </div>

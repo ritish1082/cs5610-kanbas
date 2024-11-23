@@ -6,12 +6,16 @@ const initialState = {
   ],
   todo: { title: "Learn Mongo" },
 };
+
 const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      const newTodos = [...state.todos, { ...action.payload, id: new Date().getTime().toString() }];
+      const newTodos = [
+        ...state.todos,
+        { ...action.payload, id: new Date().getTime().toString() },
+      ];
       state.todos = newTodos;
       state.todo = { title: "" };
     },

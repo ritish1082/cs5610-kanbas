@@ -93,12 +93,12 @@ export default function BootstrapTables() {
       <div id="wd-css-navigating-with-cards">
         <h2>Cards</h2>
         <div className="card" style={{ width: "18rem" }}>
-          <img src="images/boston.jpg" className="card-img-top" alt="boston" />
+          <img src="images/starwars.png" className="card-img-top" alt="boston" />
           <div className="card-body">
-            <h5 className="card-title">Boston, MA</h5>
-            <p className="card-text">Boston Never Gets Old</p>
-            <a href="https://www.boston.gov/" className="btn btn-primary">
-              Visit Boston
+            <h5 className="card-title">Star Wars</h5>
+            <p className="card-text">May the force be with you!</p>
+            <a href="https://www.starwars.com/" className="btn btn-primary">
+              Visit Star Wars
             </a>
           </div>
         </div>
