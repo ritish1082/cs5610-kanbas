@@ -1,5 +1,5 @@
 import { FaPlus } from "react-icons/fa6";
-import GreenCheckmark from "./GreenCheckmark";
+import GreenCheckmark from "./CheckMark";
 import ModuleEditor from "./ModuleEditor";
 import { useSelector } from "react-redux";
 

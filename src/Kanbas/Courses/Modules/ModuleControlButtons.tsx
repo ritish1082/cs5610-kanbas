@@ -1,7 +1,7 @@
 import { FaTrash } from "react-icons/fa";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
-import GreenCheckmark from "./GreenCheckmark";
+import GreenCheckmark from "./CheckMark";
 import { FaPencil } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
