@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../styles.css";
 import { BsGripVertical } from "react-icons/bs";
 import { MdOutlineAssignment } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
