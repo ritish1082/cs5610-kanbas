@@ -16,7 +16,9 @@ export default function Dashboard({
   const { currentUser } = useSelector((state) => state.accountReducer);
   console.log('Courses:', courses);
   console.log('Enrolling:', enrolling);
-  console.log('Enrolled Courses:', courses.filter(course => course.enrolled));
+
+
+  console.log('Enrolled Courses:', courses.filter(course => course && course.enrolled));
 
   
   return (
@@ -78,7 +80,10 @@ export default function Dashboard({
       <hr />
       <div id="wd-dashboard-courses" className="row">
         <div className="row row-cols-1 row-cols-md-5">
-          {courses.map((course) => (
+          {courses.map((course) => 
+          
+          
+            course ? (
             <div
               key={course._id}
               className="wd-dashboard-course col mb-3 mt-3"
@@ -155,7 +160,7 @@ export default function Dashboard({
                 </Link>
               </div>
             </div>
-          ))}
+          ): <></>)}
         </div>
       </div>
     </div>

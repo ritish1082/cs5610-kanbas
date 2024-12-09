@@ -13,7 +13,7 @@ import CoursePeople from "./People/CoursePeople";
 export default function Courses({ courses }) {
   const { pathname } = useLocation();
   const { cid } = useParams();
-  const course = courses.find((course) => course._id === cid); 
+  const course = courses.find((course) => course && course._id === cid); 
   
   return (
     <div id="wd-courses">
